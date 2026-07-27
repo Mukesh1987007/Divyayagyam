@@ -10,7 +10,7 @@ import { AddToCartButton } from '@/components/add-to-cart-button'
 
 import { HeroPujaSlider } from '@/components/hero-puja-slider'
 
-export const revalidate = 30
+export const revalidate = 0 // Fetch live products instantly on every request
 
 export default async function ProductsPage() {
   const [products, heroSlides] = await Promise.all([

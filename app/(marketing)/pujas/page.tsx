@@ -1,16 +1,28 @@
-
 import Link from 'next/link'
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Calendar, MapPin, Sparkles } from 'lucide-react'
-import { getCachedPujas } from '@/lib/cache'
+import { prisma } from '@/lib/prisma'
 
-export const revalidate = 3600 // Cache public route on CDN Edge for up to 1 hour (revalidated on-demand)
+export const revalidate = 0 // Fetch live data instantly on every page request
 
 export default async function PujasPage() {
-  const pujas = await getCachedPujas()
+  const pujas = await prisma.puja.findMany({
+    where: { 
+      status: 'PUBLISHED',
+      OR: [
+        { publishedAt: null },
+        { publishedAt: { lte: new Date() } }
+      ]
+    },
+    include: {
+      category: { select: { id: true, name: true } },
+      temple: { select: { id: true, name: true } }
+    },
+    orderBy: { createdAt: 'desc' }
+  }).catch(() => [])
 
   return (
     <div className="container py-14 space-y-10">
@@ -28,7 +40,6 @@ export default async function PujasPage() {
             <Sparkles className="h-12 w-12 text-muted-foreground/60 mx-auto" />
             <h3 className="text-lg font-semibold">No Pujas Scheduled</h3>
             <p className="text-sm text-muted-foreground">Check back soon for available online Puja services or ask our AI Pandit.</p>
-            
           </CardContent>
         </Card>
       ) : (
@@ -73,7 +84,7 @@ export default async function PujasPage() {
                   <div className="flex items-center justify-between">
                     <div className="flex flex-col">
                       <span className="text-[10px] text-muted-foreground">संकल्प मूल्य</span>
-                      <span className="text-lg font-black text-[var(--primary-color)]">₹{p.price}</span>
+                      <span className="text-lg font-black text-[var(--primary-color)]">₹{Number(p.price)}</span>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 mt-1">
@@ -90,5 +101,3 @@ export default async function PujasPage() {
     </div>
   )
 }
-
-

@@ -29,7 +29,7 @@ const fallbackTestimonials = [
   { name: 'अंजली मेनन (Anjali Menon)', location: 'बैंगलोर', rating: 5, message: 'पंडित जी ने मंत्रोच्चारण के साथ मेरा नाम और गोत्र स्पष्ट रूप से बोला। बहुत संतुष्ट हूँ।' },
 ]
 
-export const revalidate = 30
+export const revalidate = 0 // Fetch fresh live data instantly on every request
 
 export default async function HomePage() {
   let [products, dbPujas, dbTestimonials, heroSlides, pastPujas, customerReviews, festivalEvents] = await Promise.all([
