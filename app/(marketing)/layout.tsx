@@ -1,4 +1,6 @@
 import { Navbar } from '@/components/layouts/navbar'
+
+export const dynamic = 'force-dynamic'
 import { Footer } from '@/components/layouts/footer'
 import { GargiChatbot } from '@/components/gargi-chatbot'
 import prisma from '@/lib/prisma'
