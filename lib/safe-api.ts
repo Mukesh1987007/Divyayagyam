@@ -1,5 +1,26 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { translatePrismaError } from './prisma-healer'
+
+export function translatePrismaError(err: any): string {
+  if (!err || typeof err !== 'object') return 'An unexpected database error occurred.'
+
+  switch (err.code) {
+    case 'P2002':
+      return 'This record already exists. Please use different unique details (e.g., email or name).'
+    case 'P2003':
+      return 'Operation failed because it references a related record that does not exist.'
+    case 'P2025':
+      return 'The record you are trying to update or delete could not be found.'
+    case 'P2024':
+    case 'P1001':
+    case 'P1008':
+      return 'The database is currently busy or unreachable. Please try again in a few moments.'
+    default:
+      if (err.message && err.message.includes('PrismaClientKnownRequestError')) {
+        return 'A database constraint was violated.'
+      }
+      return 'An internal database error occurred.'
+  }
+}
 
 type ApiHandler = (req: NextRequest, params: any) => Promise<NextResponse>
 
