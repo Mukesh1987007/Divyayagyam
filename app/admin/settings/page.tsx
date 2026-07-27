@@ -11,7 +11,7 @@ import { Button } from '@/components/ui/button'
 import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert'
 import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { Loader2, CheckCircle2, XCircle, AlertTriangle, Key, Info } from 'lucide-react'
+import { Loader2, CheckCircle2, XCircle, AlertTriangle, Key, Info, Lock, Unlock, Eye, EyeOff, Trash2, Plus, ShieldCheck, ShieldAlert, Save } from 'lucide-react'
 import { toast } from 'sonner'
 
 export default function SettingsPage() {
@@ -94,6 +94,106 @@ export default function SettingsPage() {
     } finally {
       setChangingPassword(false)
     }
+  }
+
+  // Protected Secrets Vault States
+  const [isVaultUnlocked, setIsVaultUnlocked] = useState(false)
+  const [vaultPassword, setVaultPassword] = useState('')
+  const [unlockingVault, setUnlockingVault] = useState(false)
+  const [envPairs, setEnvPairs] = useState<Array<{ id: string; key: string; value: string }>>([])
+  const [showSecretMap, setShowSecretMap] = useState<Record<string, boolean>>({})
+  const [savingEnv, setSavingEnv] = useState(false)
+  const [newKey, setNewKey] = useState('')
+  const [newVal, setNewVal] = useState('')
+
+  const handleUnlockVault = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!vaultPassword) {
+      toast.error('Please enter Super Admin Master Password.')
+      return
+    }
+
+    try {
+      setUnlockingVault(true)
+      const res = await fetch('/api/admin/env', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'unlock', securityPassword: vaultPassword })
+      })
+      const data = await res.json()
+      if (data.ok && data.unlocked) {
+        toast.success(data.message || 'Vault Unlocked!')
+        setIsVaultUnlocked(true)
+        const pairs = Object.entries(data.env || {}).map(([k, v]) => ({
+          id: Math.random().toString(36).substring(7),
+          key: k,
+          value: String(v)
+        }))
+        setEnvPairs(pairs)
+      } else {
+        toast.error(data.error || 'Access Denied: Invalid Master Password!')
+      }
+    } catch {
+      toast.error('Network error unlocking secrets vault')
+    } finally {
+      setUnlockingVault(false)
+    }
+  }
+
+  const handleSaveEnvSecrets = async () => {
+    try {
+      setSavingEnv(true)
+      const envObj: Record<string, string> = {}
+      for (const item of envPairs) {
+        if (item.key.trim()) {
+          envObj[item.key.trim().toUpperCase()] = item.value
+        }
+      }
+      const res = await fetch('/api/admin/env', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'save', securityPassword: vaultPassword, env: envObj })
+      })
+      const data = await res.json()
+      if (data.ok) {
+        toast.success(data.message || 'Secrets saved & applied live to .env and .env.local!')
+      } else {
+        toast.error(data.error || 'Failed to save secrets')
+      }
+    } catch {
+      toast.error('Network error saving secrets')
+    } finally {
+      setSavingEnv(false)
+    }
+  }
+
+  const handleAddEnvPair = () => {
+    if (!newKey.trim()) {
+      toast.error('Secret KEY is required')
+      return
+    }
+    const cleanKey = newKey.trim().toUpperCase()
+    if (envPairs.some(p => p.key === cleanKey)) {
+      toast.error(`Key ${cleanKey} already exists!`)
+      return
+    }
+    setEnvPairs(prev => [...prev, { id: Math.random().toString(36).substring(7), key: cleanKey, value: newVal.trim() }])
+    setNewKey('')
+    setNewVal('')
+    toast.success(`Added key: ${cleanKey}`)
+  }
+
+  const handleRemoveEnvPair = (id: string) => {
+    setEnvPairs(prev => prev.filter(p => p.id !== id))
+    toast.info('Secret key removed from list')
+  }
+
+  const handleUpdateEnvValue = (id: string, value: string) => {
+    setEnvPairs(prev => prev.map(p => p.id === id ? { ...p, value } : p))
+  }
+
+  const toggleShowSecret = (key: string) => {
+    setShowSecretMap(prev => ({ ...prev, [key]: !prev[key] }))
   }
 
   const [uploadingLogo, setUploadingLogo] = useState(false)
@@ -497,111 +597,166 @@ export default function SettingsPage() {
 
         {/* SECRETS & KEYS TAB */}
         <TabsContent value="secrets" className="space-y-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Key className="h-5 w-5 text-orange-500" />
-                Secrets & Credentials Manager
-              </CardTitle>
-              <CardDescription>
-                Store keys securely in the database to avoid hardcoding or failing builds during Vercel deployment.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <Alert className="bg-orange-50 border-orange-200">
-                <Info className="h-4 w-4 text-orange-600" />
-                <AlertTitle className="text-orange-800 font-semibold">Important Deployment Note</AlertTitle>
-                <AlertDescription className="text-orange-700 text-sm">
-                  Keys saved here will override environment variables at runtime on Vercel. 
-                  This makes it easy to repair config errors without redeploying or triggering new build pipelines.
-                </AlertDescription>
-              </Alert>
-
-              <div className="bg-amber-50 border border-amber-200 text-amber-800 p-4 rounded-lg text-sm mb-6">
-                  <strong>Security Notice:</strong> High-privilege secrets (like Supabase Service Role Key, Razorpay Secret, and AI API Keys) have been migrated out of the database for security reasons. They must now be configured directly in your hosting provider's Environment Variables (e.g., Vercel).
+          {!isVaultUnlocked ? (
+            <Card className="max-w-xl mx-auto border-orange-200 shadow-xl my-6">
+              <CardHeader className="text-center bg-gradient-to-r from-orange-50 via-amber-50 to-orange-50 rounded-t-xl border-b py-6">
+                <div className="mx-auto h-16 w-16 rounded-full bg-orange-100 border-2 border-orange-300 flex items-center justify-center mb-2 shadow-inner">
+                  <Lock className="h-8 w-8 text-orange-600" />
                 </div>
-                
-                <div className="grid gap-6 md:grid-cols-2">
-                <div className="space-y-4 border p-4 rounded-lg bg-slate-50/50 opacity-75">
-                  <h3 className="font-semibold text-lg border-b pb-2 flex items-center justify-between">
-                    Supabase Configuration
-                    <Badge variant="outline">Database & Storage</Badge>
-                  </h3>
+                <CardTitle className="text-2xl text-slate-900 font-bold">Protected Secrets Vault 🔒</CardTitle>
+                <CardDescription className="text-slate-600 max-w-sm mx-auto text-xs">
+                  For extreme security reasons, viewing and modifying site secrets (.env & .env.local) requires entering your Super Admin Security Password.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-6">
+                <form onSubmit={handleUnlockVault} className="space-y-4">
                   <div className="space-y-2">
-                    <Label>Supabase URL (NEXT_PUBLIC_SUPABASE_URL)</Label>
-                    <Input value={supabaseUrl} onChange={(e) => setSupabaseUrl(e.target.value)} />
+                    <Label htmlFor="vaultPass">Super Admin Master Security Password</Label>
+                    <Input
+                      id="vaultPass"
+                      type="password"
+                      value={vaultPassword}
+                      onChange={(e) => setVaultPassword(e.target.value)}
+                      placeholder="Enter Super Admin Password"
+                      required
+                    />
                   </div>
-                  <div className="space-y-2">
-                    <Label>Supabase Anon Key (NEXT_PUBLIC_SUPABASE_ANON_KEY)</Label>
-                    <Input type="password" value={supabaseAnonKey} onChange={(e) => setSupabaseAnonKey(e.target.value)} />
-                  </div>
-                  <div className="space-y-2">
-                    <Label>Supabase Service Role Key (SUPABASE_SERVICE_ROLE_KEY)</Label>
-                    <Input type="password" value={supabaseServiceRole} onChange={(e) => setSupabaseServiceRole(e.target.value)} />
-                  </div>
+                  <Button type="submit" disabled={unlockingVault} className="w-full bg-orange-600 hover:bg-orange-700 h-11 text-base font-semibold">
+                    {unlockingVault ? <Loader2 className="h-5 w-5 animate-spin mr-2" /> : <Unlock className="h-5 w-5 mr-2" />}
+                    Unlock Secrets Vault 🔓
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          ) : (
+            <Card className="border-orange-200 shadow-lg">
+              <CardHeader className="bg-gradient-to-r from-orange-50 via-amber-50 to-orange-50 border-b flex flex-row items-center justify-between">
+                <div>
+                  <CardTitle className="flex items-center gap-2 text-xl text-orange-950">
+                    <Unlock className="h-5 w-5 text-green-600" />
+                    Live Environment Secrets Manager (.env & .env.local)
+                  </CardTitle>
+                  <CardDescription className="text-slate-600 text-xs">
+                    All updates are saved directly to .env & .env.local and applied LIVE in memory without server restarts!
+                  </CardDescription>
                 </div>
-
-                <div className="space-y-4 border p-4 rounded-lg bg-slate-50/50 opacity-75">
-                  <h3 className="font-semibold text-lg border-b pb-2 flex items-center justify-between">
-                    Razorpay Gateway
-                    <Badge variant="outline">Payments</Badge>
-                  </h3>
-                  <div className="space-y-2">
-                    <Label>Razorpay Key ID (RAZORPAY_KEY_ID)</Label>
-                    <Input value={razorpayKeyId} onChange={(e) => setRazorpayKeyId(e.target.value)} />
-                  </div>
-                  <div className="space-y-2">
-                    <Label>Razorpay Key Secret (RAZORPAY_KEY_SECRET)</Label>
-                    <Input type="password" value={razorpayKeySecret} onChange={(e) => setRazorpayKeySecret(e.target.value)} />
-                  </div>
-
-                  <h3 className="font-semibold text-lg border-b pb-2 pt-2 flex items-center justify-between">
-                    AI Integration (Gemini)
-                    <Badge variant="outline">AI Chat</Badge>
-                  </h3>
-                  <div className="space-y-2">
-                    <Label>Google Gemini API Key (GEMINI_API_KEY)</Label>
-                    <Input type="password" value={geminiApiKey} onChange={(e) => setGeminiApiKey(e.target.value)} />
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-4 border p-4 rounded-lg bg-slate-50/50">
-                <h3 className="font-semibold text-lg border-b pb-2 flex items-center justify-between">
-                  Database Connections (PostgreSQL)
-                  <Badge variant="outline">Prisma URL</Badge>
-                </h3>
-                <div className="space-y-2">
-                  <Label>Database connection URL (DATABASE_URL)</Label>
-                  <Input 
-                    placeholder="postgresql://username:password@host:port/database" 
-                    value={dbUrl} 
-                    onChange={(e) => setDbUrl(e.target.value)} 
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label>Direct connection URL (DIRECT_URL)</Label>
-                  <Input 
-                    placeholder="postgresql://username:password@host:port/database" 
-                    value={directUrlSetting} 
-                    onChange={(e) => setDirectUrlSetting(e.target.value)} 
-                  />
-                </div>
-              </div>
-
-              <div className="flex gap-4 border-t pt-4">
-                <Button variant="outline" type="button" onClick={() => handleUndo('secrets')}>Undo Changes</Button>
-                <Button type="button" onClick={() => handleSave('secrets')} disabled={saving} className="bg-red-600 hover:bg-red-700">
-                  {saving && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                  Save API Keys & Secrets
+                <Button variant="outline" size="sm" onClick={() => setIsVaultUnlocked(false)} className="text-slate-700 border-slate-300">
+                  <Lock className="h-4 w-4 mr-1.5" /> Lock Vault
                 </Button>
-                <Button variant="outline" onClick={runDiagnostics} disabled={diagnosing}>
-                  {diagnosing && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                  Save & Validate Connections
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
+              </CardHeader>
+              <CardContent className="pt-6 space-y-6">
+                <Alert className="bg-green-50 border-green-200 text-green-900">
+                  <ShieldCheck className="h-5 w-5 text-green-600" />
+                  <AlertTitle className="font-bold">Vault Unlocked Live & Active</AlertTitle>
+                  <AlertDescription className="text-xs">
+                    Super Admin authenticated. Any changes saved here update <strong>.env</strong> and <strong>.env.local</strong> files on disk and process memory instantly.
+                  </AlertDescription>
+                </Alert>
+
+                {/* Add New Key Form */}
+                <div className="bg-slate-50 border p-4 rounded-lg space-y-3">
+                  <Label className="text-sm font-bold flex items-center gap-1.5">
+                    <Plus className="h-4 w-4 text-orange-600" /> Add New Environment Secret / Key
+                  </Label>
+                  <div className="grid gap-3 sm:grid-cols-5">
+                    <div className="sm:col-span-2">
+                      <Input
+                        placeholder="KEY_NAME (e.g. STRIPE_SECRET_KEY)"
+                        value={newKey}
+                        onChange={(e) => setNewKey(e.target.value.toUpperCase())}
+                        className="font-mono text-xs uppercase"
+                      />
+                    </div>
+                    <div className="sm:col-span-2">
+                      <Input
+                        placeholder="Secret Value..."
+                        value={newVal}
+                        onChange={(e) => setNewVal(e.target.value)}
+                        className="font-mono text-xs"
+                      />
+                    </div>
+                    <div>
+                      <Button type="button" onClick={handleAddEnvPair} className="w-full bg-slate-900 hover:bg-slate-800 text-xs">
+                        <Plus className="h-4 w-4 mr-1" /> Add Key
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Environment Keys List */}
+                <div className="border rounded-lg overflow-hidden bg-white shadow-sm">
+                  <div className="bg-slate-100 px-4 py-2.5 border-b text-xs font-bold text-slate-700 grid grid-cols-12 gap-2">
+                    <div className="col-span-4">Environment Key</div>
+                    <div className="col-span-7">Secret Value</div>
+                    <div className="col-span-1 text-right">Action</div>
+                  </div>
+
+                  <div className="divide-y max-h-[500px] overflow-y-auto">
+                    {envPairs.length === 0 ? (
+                      <div className="p-8 text-center text-slate-500 text-sm">No environment secrets found.</div>
+                    ) : (
+                      envPairs.map((pair) => {
+                        const isVisible = showSecretMap[pair.key] || false
+                        return (
+                          <div key={pair.id} className="p-3 grid grid-cols-12 gap-2 items-center hover:bg-slate-50 transition-colors">
+                            <div className="col-span-4">
+                              <span className="font-mono text-xs font-bold text-slate-800 break-all">{pair.key}</span>
+                            </div>
+                            <div className="col-span-7 flex items-center gap-2">
+                              <Input
+                                type={isVisible ? 'text' : 'password'}
+                                value={pair.value}
+                                onChange={(e) => handleUpdateEnvValue(pair.id, e.target.value)}
+                                className="font-mono text-xs h-9"
+                              />
+                              <Button
+                                type="button"
+                                variant="ghost"
+                                size="sm"
+                                className="h-8 w-8 p-0 shrink-0"
+                                onClick={() => toggleShowSecret(pair.key)}
+                                title={isVisible ? 'Hide value' : 'Show value'}
+                              >
+                                {isVisible ? <EyeOff className="h-4 w-4 text-slate-600" /> : <Eye className="h-4 w-4 text-slate-600" />}
+                              </Button>
+                            </div>
+                            <div className="col-span-1 text-right">
+                              <Button
+                                type="button"
+                                variant="ghost"
+                                size="sm"
+                                className="h-8 w-8 p-0 text-red-600 hover:text-red-700 hover:bg-red-50"
+                                onClick={() => handleRemoveEnvPair(pair.id)}
+                                title="Delete key"
+                              >
+                                <Trash2 className="h-4 w-4" />
+                              </Button>
+                            </div>
+                          </div>
+                        )
+                      })
+                    )}
+                  </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t items-center justify-between">
+                  <div className="text-xs text-slate-500 flex items-center gap-1.5">
+                    <Info className="h-4 w-4 text-blue-500 shrink-0" />
+                    <span>Saves to <strong>.env</strong> & <strong>.env.local</strong> and updates <code>process.env</code> live instantly.</span>
+                  </div>
+                  <Button
+                    type="button"
+                    onClick={handleSaveEnvSecrets}
+                    disabled={savingEnv}
+                    className="bg-orange-600 hover:bg-orange-700 text-white text-sm px-6 h-10 w-full sm:w-auto font-semibold shadow-md"
+                  >
+                    {savingEnv ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Save className="mr-2 h-4 w-4" />}
+                    Save & Apply Live to .env & .env.local
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          )}
         </TabsContent>
 
         {/* SUPER ADMIN SECURITY TAB */}
