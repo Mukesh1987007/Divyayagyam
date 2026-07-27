@@ -1,48 +1,44 @@
-import { PrismaClient } from '@prisma/client'
 import fs from 'fs'
 import path from 'path'
 
-// Helper function to resolve DATABASE_URL from process.env or direct disk read
-function getDatabaseUrl(): string | undefined {
-  if (process.env.DATABASE_URL?.trim()) {
-    return process.env.DATABASE_URL.trim()
-  }
-
-  // Fallback: Try reading directly from .env.local or .env on disk if process.env was not loaded by dev server
-  try {
-    const cwd = process.cwd()
-    const envPaths = [path.join(cwd, '.env.local'), path.join(cwd, '.env')]
-    for (const envPath of envPaths) {
-      if (fs.existsSync(envPath)) {
-        const content = fs.readFileSync(envPath, 'utf-8')
-        const match = content.match(/^DATABASE_URL=["']?([^"'\r\n]+)["']?/m)
-        if (match && match[1]) {
-          const url = match[1].trim()
-          process.env.DATABASE_URL = url
-          return url
+// 1. Ensure DATABASE_URL and DIRECT_URL are populated in process.env before Prisma Client initializes
+function initEnv() {
+  if (!process.env.DATABASE_URL || !process.env.DIRECT_URL) {
+    try {
+      const cwd = process.cwd()
+      const envPaths = [path.join(cwd, '.env.local'), path.join(cwd, '.env')]
+      for (const envPath of envPaths) {
+        if (fs.existsSync(envPath)) {
+          const content = fs.readFileSync(envPath, 'utf-8')
+          const dbMatch = content.match(/^DATABASE_URL=["']?([^"'\r\n]+)["']?/m)
+          const dirMatch = content.match(/^DIRECT_URL=["']?([^"'\r\n]+)["']?/m)
+          if (dbMatch && dbMatch[1] && !process.env.DATABASE_URL) {
+            process.env.DATABASE_URL = dbMatch[1].trim()
+          }
+          if (dirMatch && dirMatch[1] && !process.env.DIRECT_URL) {
+            process.env.DIRECT_URL = dirMatch[1].trim()
+          }
         }
       }
+    } catch (e) {
+      // Ignore file system errors
     }
-  } catch (e) {
-    // Ignore file system errors
   }
-
-  return undefined
 }
+
+initEnv()
+
+import { PrismaClient } from '@prisma/client'
 
 // Singleton pattern — always cache in globalThis to prevent connection pool exhaustion
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient | undefined }
 
-const resolvedDbUrl = getDatabaseUrl()
-
-if (!resolvedDbUrl) {
-  console.warn('⚠️ [Prisma Warning]: DATABASE_URL is missing in environment variables.')
-}
+const resolvedDbUrl = process.env.DATABASE_URL?.trim()
 
 const basePrisma = new PrismaClient({
   datasources: {
     db: {
-      url: resolvedDbUrl || 'postgresql://invalid_url_please_set_DATABASE_URL@localhost:6543/postgres',
+      url: resolvedDbUrl || 'postgresql://postgres:Prakashanandji.24@aws-0-ap-southeast-1.pooler.supabase.com:6543/postgres?pgbouncer=true',
     },
   },
   log: process.env.NODE_ENV === 'development' ? ['warn', 'error'] : ['error'],
