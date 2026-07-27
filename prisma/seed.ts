@@ -72,7 +72,7 @@ async function main() {
     where: { email: superAdminEmail },
     create: {
       email: superAdminEmail,
-      passwordHash: await bcrypt.hash('Admin@12345', 10),
+      passwordHash: await bcrypt.hash('SuperAdmin@Divya2026#Seva', 10),
       fullName: 'Divyayagyam Admin',
       firstName: 'Divyayagyam',
       lastName: 'Admin',

@@ -52,6 +52,50 @@ export default function SettingsPage() {
   const [dbUrl, setDbUrl] = useState('')
   const [directUrlSetting, setDirectUrlSetting] = useState('')
 
+  // Super Admin Security States
+  const [currentPassword, setCurrentPassword] = useState('')
+  const [newPassword, setNewPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
+  const [changingPassword, setChangingPassword] = useState(false)
+
+  const handleSuperAdminPasswordChange = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!currentPassword || !newPassword) {
+      toast.error('Both current password and new password are required.')
+      return
+    }
+    if (newPassword !== confirmPassword) {
+      toast.error('New password and confirmation password do not match.')
+      return
+    }
+    if (newPassword.length < 8) {
+      toast.error('New password must be at least 8 characters long.')
+      return
+    }
+
+    try {
+      setChangingPassword(true)
+      const res = await fetch('/api/admin/change-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ currentPassword, newPassword, confirmPassword })
+      })
+      const data = await res.json()
+      if (data.ok) {
+        toast.success(data.message || 'Super Admin Password updated successfully!')
+        setCurrentPassword('')
+        setNewPassword('')
+        setConfirmPassword('')
+      } else {
+        toast.error(data.error || 'Failed to update password')
+      }
+    } catch {
+      toast.error('Network error updating password')
+    } finally {
+      setChangingPassword(false)
+    }
+  }
+
   const [uploadingLogo, setUploadingLogo] = useState(false)
 
   const handleLogoUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -259,10 +303,11 @@ export default function SettingsPage() {
       />
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-        <TabsList className="grid w-full grid-cols-4 lg:w-[600px]">
+        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-5 lg:w-[800px]">
           <TabsTrigger value="general">Branding & General</TabsTrigger>
           <TabsTrigger value="contact">Contact Details</TabsTrigger>
           <TabsTrigger value="secrets">Secrets & API Keys</TabsTrigger>
+          <TabsTrigger value="security">Security & Password</TabsTrigger>
           <TabsTrigger value="status">System Status</TabsTrigger>
         </TabsList>
 
@@ -555,6 +600,73 @@ export default function SettingsPage() {
                   Save & Validate Connections
                 </Button>
               </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        {/* SUPER ADMIN SECURITY TAB */}
+        <TabsContent value="security" className="space-y-6">
+          <Card className="max-w-2xl border-orange-200 shadow-md">
+            <CardHeader className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-t-lg border-b">
+              <CardTitle className="text-xl flex items-center gap-2 text-orange-950">
+                <ShieldCheck className="h-6 w-6 text-orange-600" /> Super Admin Security & Password Reset
+              </CardTitle>
+              <CardDescription className="text-slate-600">
+                Change your Super Admin password securely. Access to password reset is strictly restricted to Super Admin sessions.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="pt-6 space-y-6">
+              <form onSubmit={handleSuperAdminPasswordChange} className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="currentPass">Current Super Admin Password *</Label>
+                  <Input
+                    id="currentPass"
+                    type="password"
+                    value={currentPassword}
+                    onChange={(e) => setCurrentPassword(e.target.value)}
+                    placeholder="Enter current password"
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="newPass">New Super Admin Password *</Label>
+                  <Input
+                    id="newPass"
+                    type="password"
+                    value={newPassword}
+                    onChange={(e) => setNewPassword(e.target.value)}
+                    placeholder="Minimum 8 characters (e.g. Pass@2026#Seva)"
+                    required
+                    minLength={8}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="confirmPass">Confirm New Super Admin Password *</Label>
+                  <Input
+                    id="confirmPass"
+                    type="password"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    placeholder="Re-enter new password"
+                    required
+                    minLength={8}
+                  />
+                </div>
+
+                <div className="bg-blue-50 border border-blue-200 text-blue-900 p-3 rounded-md text-xs leading-relaxed flex items-start gap-2">
+                  <ShieldAlert className="h-4 w-4 text-blue-600 shrink-0 mt-0.5" />
+                  <span>
+                    <strong>Security Rule:</strong> Devotees, customers, and non-super-admin users are strictly blocked from changing or viewing admin credentials.
+                  </span>
+                </div>
+
+                <Button type="submit" disabled={changingPassword} className="bg-orange-600 hover:bg-orange-700 w-full sm:w-auto">
+                  {changingPassword && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                  Update Super Admin Password
+                </Button>
+              </form>
             </CardContent>
           </Card>
         </TabsContent>
