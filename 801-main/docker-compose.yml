@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  postgres-dev:
+    image: postgres:15-alpine
+    container_name: devyajnam-postgres-dev
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespassword108
+      POSTGRES_DB: devyajnam_local
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata-devyajnam:/var/lib/postgresql/data
+
+volumes:
+  pgdata-devyajnam:
+    driver: local

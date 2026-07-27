@@ -1,0 +1,1152 @@
+{
+  "timestamp": "2026-07-22T13:55:15.017Z",
+  "healthScore": 0,
+  "summary": {
+    "totalIssues": 158,
+    "critical": 5,
+    "performance": 146,
+    "security": 6,
+    "responsiveness": 1
+  },
+  "issues": [
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(auth)\\forgot-password\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(auth)\\login\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(auth)\\register\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\addresses\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\bookings\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\downloads\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\invoices\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\notifications\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\orders\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\payments\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\profile\\page.tsx",
+      "issue": "Using <img> instead of next/image",
+      "fix": "Replace with Next.js Image component for optimization",
+      "code": "import Image from 'next/image';\n<Image src=\"...\" alt=\"...\" width={400} height={300} />"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\profile\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\reports\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\support\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\wishlist\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\about\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\astro\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\blog\\page.tsx",
+      "issue": "Using <img> instead of next/image",
+      "fix": "Replace with Next.js Image component for optimization",
+      "code": "import Image from 'next/image';\n<Image src=\"...\" alt=\"...\" width={400} height={300} />"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\blog\\[slug]\\page.tsx",
+      "issue": "Using <img> instead of next/image",
+      "fix": "Replace with Next.js Image component for optimization",
+      "code": "import Image from 'next/image';\n<Image src=\"...\" alt=\"...\" width={400} height={300} />"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\careers\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\cart\\page.tsx",
+      "issue": "Using <img> instead of next/image",
+      "fix": "Replace with Next.js Image component for optimization",
+      "code": "import Image from 'next/image';\n<Image src=\"...\" alt=\"...\" width={400} height={300} />"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\cart\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\chadhawa\\page.tsx",
+      "issue": "Using <img> instead of next/image",
+      "fix": "Replace with Next.js Image component for optimization",
+      "code": "import Image from 'next/image';\n<Image src=\"...\" alt=\"...\" width={400} height={300} />"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\chadhawa\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\community\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\contact\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\faq\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\gallery\\page.tsx",
+      "issue": "Using <img> instead of next/image",
+      "fix": "Replace with Next.js Image component for optimization",
+      "code": "import Image from 'next/image';\n<Image src=\"...\" alt=\"...\" width={400} height={300} />"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\page.tsx",
+      "issue": "Large component (>300 lines)",
+      "fix": "Split into smaller components or use lazy loading",
+      "suggestion": "dynamic(() => import('./page.tsx'), { ssr: false })"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\products\\page.tsx",
+      "issue": "Using <img> instead of next/image",
+      "fix": "Replace with Next.js Image component for optimization",
+      "code": "import Image from 'next/image';\n<Image src=\"...\" alt=\"...\" width={400} height={300} />"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\products\\[slug]\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\pujas\\page.tsx",
+      "issue": "Using <img> instead of next/image",
+      "fix": "Replace with Next.js Image component for optimization",
+      "code": "import Image from 'next/image';\n<Image src=\"...\" alt=\"...\" width={400} height={300} />"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\pujas\\[slug]\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\refunds\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\shipping\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\sitemap\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\support\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\temples\\page.tsx",
+      "issue": "Using <img> instead of next/image",
+      "fix": "Replace with Next.js Image component for optimization",
+      "code": "import Image from 'next/image';\n<Image src=\"...\" alt=\"...\" width={400} height={300} />"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\temples\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "RESPONSIVENESS",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\temples\\[slug]\\page.tsx",
+      "issue": "Fixed widths without mobile fallback",
+      "fix": "Add responsive classes: sm:, md:, lg:",
+      "code": "className=\"w-full sm:w-1/2 lg:w-1/3\""
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\tools\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\vip-pujas\\page.tsx",
+      "issue": "Using <img> instead of next/image",
+      "fix": "Replace with Next.js Image component for optimization",
+      "code": "import Image from 'next/image';\n<Image src=\"...\" alt=\"...\" width={400} height={300} />"
+    },
+    {
+      "type": "CRITICAL",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\ai\\page.tsx",
+      "issue": "useSearchParams used without Suspense boundary",
+      "fix": "Wrap component in React.Suspense",
+      "code": "<Suspense fallback={<div>Loading...</div>}>\n  <Component />\n</Suspense>"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\ai\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\analytics\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\astrology\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\backup\\page.tsx",
+      "issue": "Large component (>300 lines)",
+      "fix": "Split into smaller components or use lazy loading",
+      "suggestion": "dynamic(() => import('./page.tsx'), { ssr: false })"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\backup\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\blog\\categories\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\blog\\comments\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\blog\\new\\page.tsx",
+      "issue": "Large component (>300 lines)",
+      "fix": "Split into smaller components or use lazy loading",
+      "suggestion": "dynamic(() => import('./page.tsx'), { ssr: false })"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\blog\\new\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\blog\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\bookings\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\chadhawa\\page.tsx",
+      "issue": "Large component (>300 lines)",
+      "fix": "Split into smaller components or use lazy loading",
+      "suggestion": "dynamic(() => import('./page.tsx'), { ssr: false })"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\chadhawa\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\cms\\hero\\page.tsx",
+      "issue": "Large component (>300 lines)",
+      "fix": "Split into smaller components or use lazy loading",
+      "suggestion": "dynamic(() => import('./page.tsx'), { ssr: false })"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\cms\\hero\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\cms\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\cms\\pages\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\customers\\page.tsx",
+      "issue": "Large component (>300 lines)",
+      "fix": "Split into smaller components or use lazy loading",
+      "suggestion": "dynamic(() => import('./page.tsx'), { ssr: false })"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\customers\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\customizer\\page.tsx",
+      "issue": "Large component (>300 lines)",
+      "fix": "Split into smaller components or use lazy loading",
+      "suggestion": "dynamic(() => import('./page.tsx'), { ssr: false })"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\customizer\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "CRITICAL",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\developer\\page.tsx",
+      "issue": "useSearchParams used without Suspense boundary",
+      "fix": "Wrap component in React.Suspense",
+      "code": "<Suspense fallback={<div>Loading...</div>}>\n  <Component />\n</Suspense>"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\developer\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\events\\page.tsx",
+      "issue": "Large component (>300 lines)",
+      "fix": "Split into smaller components or use lazy loading",
+      "suggestion": "dynamic(() => import('./page.tsx'), { ssr: false })"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\events\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\gallery\\page.tsx",
+      "issue": "Large component (>300 lines)",
+      "fix": "Split into smaller components or use lazy loading",
+      "suggestion": "dynamic(() => import('./page.tsx'), { ssr: false })"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\gallery\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\login\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "SECURITY",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\login\\page.tsx",
+      "issue": "Potential secret (PASSWORD) exposed in code",
+      "fix": "Move to .env file and use process.env",
+      "code": "const apiKey = process.env.PASSWORD;"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\marketing\\coupons\\page.tsx",
+      "issue": "Large component (>300 lines)",
+      "fix": "Split into smaller components or use lazy loading",
+      "suggestion": "dynamic(() => import('./page.tsx'), { ssr: false })"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\marketing\\coupons\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\marketing\\newsletter\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\marketing\\page.tsx",
+      "issue": "Large component (>300 lines)",
+      "fix": "Split into smaller components or use lazy loading",
+      "suggestion": "dynamic(() => import('./page.tsx'), { ssr: false })"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\marketing\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\media\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\notifications\\page.tsx",
+      "issue": "Large component (>300 lines)",
+      "fix": "Split into smaller components or use lazy loading",
+      "suggestion": "dynamic(() => import('./page.tsx'), { ssr: false })"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\notifications\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\orders\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\payments\\page.tsx",
+      "issue": "Large component (>300 lines)",
+      "fix": "Split into smaller components or use lazy loading",
+      "suggestion": "dynamic(() => import('./page.tsx'), { ssr: false })"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\payments\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\products\\categories\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\products\\inventory\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\products\\new\\page.tsx",
+      "issue": "Large component (>300 lines)",
+      "fix": "Split into smaller components or use lazy loading",
+      "suggestion": "dynamic(() => import('./page.tsx'), { ssr: false })"
+    },
+    {
+      "type": "CRITICAL",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\products\\new\\page.tsx",
+      "issue": "useSearchParams used without Suspense boundary",
+      "fix": "Wrap component in React.Suspense",
+      "code": "<Suspense fallback={<div>Loading...</div>}>\n  <Component />\n</Suspense>"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\products\\new\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\products\\page.tsx",
+      "issue": "Large component (>300 lines)",
+      "fix": "Split into smaller components or use lazy loading",
+      "suggestion": "dynamic(() => import('./page.tsx'), { ssr: false })"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\products\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\pujas\\categories\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\pujas\\new\\page.tsx",
+      "issue": "Large component (>300 lines)",
+      "fix": "Split into smaller components or use lazy loading",
+      "suggestion": "dynamic(() => import('./page.tsx'), { ssr: false })"
+    },
+    {
+      "type": "CRITICAL",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\pujas\\new\\page.tsx",
+      "issue": "useSearchParams used without Suspense boundary",
+      "fix": "Wrap component in React.Suspense",
+      "code": "<Suspense fallback={<div>Loading...</div>}>\n  <Component />\n</Suspense>"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\pujas\\new\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\pujas\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\pujas\\slots\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\reports\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "CRITICAL",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\security\\page.tsx",
+      "issue": "useSearchParams used without Suspense boundary",
+      "fix": "Wrap component in React.Suspense",
+      "code": "<Suspense fallback={<div>Loading...</div>}>\n  <Component />\n</Suspense>"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\security\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\seo\\page.tsx",
+      "issue": "Large component (>300 lines)",
+      "fix": "Split into smaller components or use lazy loading",
+      "suggestion": "dynamic(() => import('./page.tsx'), { ssr: false })"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\seo\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\settings\\page.tsx",
+      "issue": "Large component (>300 lines)",
+      "fix": "Split into smaller components or use lazy loading",
+      "suggestion": "dynamic(() => import('./page.tsx'), { ssr: false })"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\settings\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\social\\page.tsx",
+      "issue": "Large component (>300 lines)",
+      "fix": "Split into smaller components or use lazy loading",
+      "suggestion": "dynamic(() => import('./page.tsx'), { ssr: false })"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\social\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\storage\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\support\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\temples\\new\\page.tsx",
+      "issue": "Large component (>300 lines)",
+      "fix": "Split into smaller components or use lazy loading",
+      "suggestion": "dynamic(() => import('./page.tsx'), { ssr: false })"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\temples\\new\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\temples\\page.tsx",
+      "issue": "Large component (>300 lines)",
+      "fix": "Split into smaller components or use lazy loading",
+      "suggestion": "dynamic(() => import('./page.tsx'), { ssr: false })"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\temples\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\testimonials\\page.tsx",
+      "issue": "Large component (>300 lines)",
+      "fix": "Split into smaller components or use lazy loading",
+      "suggestion": "dynamic(() => import('./page.tsx'), { ssr: false })"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\testimonials\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\tools\\page.tsx",
+      "issue": "Large component (>300 lines)",
+      "fix": "Split into smaller components or use lazy loading",
+      "suggestion": "dynamic(() => import('./page.tsx'), { ssr: false })"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\tools\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\users\\activity\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\users\\admins\\page.tsx",
+      "issue": "Large component (>300 lines)",
+      "fix": "Split into smaller components or use lazy loading",
+      "suggestion": "dynamic(() => import('./page.tsx'), { ssr: false })"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\users\\admins\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\users\\page.tsx",
+      "issue": "Large component (>300 lines)",
+      "fix": "Split into smaller components or use lazy loading",
+      "suggestion": "dynamic(() => import('./page.tsx'), { ssr: false })"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\users\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\users\\permissions\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\users\\roles\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\astrology\\astrologers\\route.ts",
+      "issue": "Prisma query fetching all fields",
+      "fix": "Use select: {} to fetch only needed fields",
+      "code": "select: { id: true, name: true, price: true }"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\blog\\categories\\route.ts",
+      "issue": "Prisma query fetching all fields",
+      "fix": "Use select: {} to fetch only needed fields",
+      "code": "select: { id: true, name: true, price: true }"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\chadhawa\\route.ts",
+      "issue": "Prisma query fetching all fields",
+      "fix": "Use select: {} to fetch only needed fields",
+      "code": "select: { id: true, name: true, price: true }"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\coupons\\route.ts",
+      "issue": "Prisma query fetching all fields",
+      "fix": "Use select: {} to fetch only needed fields",
+      "code": "select: { id: true, name: true, price: true }"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\gallery\\route.ts",
+      "issue": "Prisma query fetching all fields",
+      "fix": "Use select: {} to fetch only needed fields",
+      "code": "select: { id: true, name: true, price: true }"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\hero\\route.ts",
+      "issue": "Prisma query fetching all fields",
+      "fix": "Use select: {} to fetch only needed fields",
+      "code": "select: { id: true, name: true, price: true }"
+    },
+    {
+      "type": "SECURITY",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\login\\route.ts",
+      "issue": "Potential secret (PASSWORD) exposed in code",
+      "fix": "Move to .env file and use process.env",
+      "code": "const apiKey = process.env.PASSWORD;"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\marketing\\newsletter\\send\\route.ts",
+      "issue": "Prisma query fetching all fields",
+      "fix": "Use select: {} to fetch only needed fields",
+      "code": "select: { id: true, name: true, price: true }"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\marketing\\route.ts",
+      "issue": "Prisma query fetching all fields",
+      "fix": "Use select: {} to fetch only needed fields",
+      "code": "select: { id: true, name: true, price: true }"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\media\\route.ts",
+      "issue": "Prisma query fetching all fields",
+      "fix": "Use select: {} to fetch only needed fields",
+      "code": "select: { id: true, name: true, price: true }"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\payments\\route.ts",
+      "issue": "Prisma query fetching all fields",
+      "fix": "Use select: {} to fetch only needed fields",
+      "code": "select: { id: true, name: true, price: true }"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\product-categories\\route.ts",
+      "issue": "Prisma query fetching all fields",
+      "fix": "Use select: {} to fetch only needed fields",
+      "code": "select: { id: true, name: true, price: true }"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\puja-categories\\route.ts",
+      "issue": "Prisma query fetching all fields",
+      "fix": "Use select: {} to fetch only needed fields",
+      "code": "select: { id: true, name: true, price: true }"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\settings\\route.ts",
+      "issue": "Prisma query fetching all fields",
+      "fix": "Use select: {} to fetch only needed fields",
+      "code": "select: { id: true, name: true, price: true }"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\temples\\route.ts",
+      "issue": "Prisma query fetching all fields",
+      "fix": "Use select: {} to fetch only needed fields",
+      "code": "select: { id: true, name: true, price: true }"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\tools\\route.ts",
+      "issue": "Prisma query fetching all fields",
+      "fix": "Use select: {} to fetch only needed fields",
+      "code": "select: { id: true, name: true, price: true }"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\users\\roles\\route.ts",
+      "issue": "Prisma query fetching all fields",
+      "fix": "Use select: {} to fetch only needed fields",
+      "code": "select: { id: true, name: true, price: true }"
+    },
+    {
+      "type": "SECURITY",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\cron\\backup\\route.ts",
+      "issue": "Potential secret (SECRET) exposed in code",
+      "fix": "Move to .env file and use process.env",
+      "code": "const apiKey = process.env.SECRET;"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\customizer\\route.ts",
+      "issue": "Prisma query fetching all fields",
+      "fix": "Use select: {} to fetch only needed fields",
+      "code": "select: { id: true, name: true, price: true }"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\newsletter\\route.ts",
+      "issue": "Prisma query fetching all fields",
+      "fix": "Use select: {} to fetch only needed fields",
+      "code": "select: { id: true, name: true, price: true }"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\orders\\route.ts",
+      "issue": "Prisma query fetching all fields",
+      "fix": "Use select: {} to fetch only needed fields",
+      "code": "select: { id: true, name: true, price: true }"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\payments\\create-order\\route.ts",
+      "issue": "Missing Cache-Control headers in API",
+      "fix": "Add caching headers for faster responses",
+      "code": "response.headers.set('Cache-Control', 's-maxage=60, stale-while-revalidate=120');"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\payments\\verify\\route.ts",
+      "issue": "Missing Cache-Control headers in API",
+      "fix": "Add caching headers for faster responses",
+      "code": "response.headers.set('Cache-Control', 's-maxage=60, stale-while-revalidate=120');"
+    },
+    {
+      "type": "SECURITY",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\payments\\verify\\route.ts",
+      "issue": "Potential secret (SECRET) exposed in code",
+      "fix": "Move to .env file and use process.env",
+      "code": "const apiKey = process.env.SECRET;"
+    },
+    {
+      "type": "SECURITY",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\razorpay\\webhook\\route.ts",
+      "issue": "Potential secret (SECRET) exposed in code",
+      "fix": "Move to .env file and use process.env",
+      "code": "const apiKey = process.env.SECRET;"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\settings\\route.ts",
+      "issue": "Prisma query fetching all fields",
+      "fix": "Use select: {} to fetch only needed fields",
+      "code": "select: { id: true, name: true, price: true }"
+    },
+    {
+      "type": "SECURITY",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\settings\\route.ts",
+      "issue": "Potential secret (API_KEY) exposed in code",
+      "fix": "Move to .env file and use process.env",
+      "code": "const apiKey = process.env.API_KEY;"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\[[...path]]\\route.ts",
+      "issue": "Missing Cache-Control headers in API",
+      "fix": "Add caching headers for faster responses",
+      "code": "response.headers.set('Cache-Control', 's-maxage=60, stale-while-revalidate=120');"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\[[...path]]\\route.ts",
+      "issue": "Prisma query fetching all fields",
+      "fix": "Use select: {} to fetch only needed fields",
+      "code": "select: { id: true, name: true, price: true }"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\ask-a-pandit\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\bookings\\new\\page.tsx",
+      "issue": "Large component (>300 lines)",
+      "fix": "Split into smaller components or use lazy loading",
+      "suggestion": "dynamic(() => import('./page.tsx'), { ssr: false })"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\bookings\\new\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\checkout\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    },
+    {
+      "type": "PERFORMANCE",
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\test-payment\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR",
+      "code": "export const revalidate = 3600; // Revalidate every hour"
+    }
+  ],
+  "aiPrompt": "\nYou are an expert Next.js performance engineer. \nAnalyze these issues and provide specific code fixes.\nReply with exact code changes and explanations.\n\n## Project Health Score: 0/100\n\n### 🔴 CRITICAL ISSUES (5)\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\ai\\page.tsx\n- **Issue:** useSearchParams used without Suspense boundary\n- **Fix:** Wrap component in React.Suspense\n- **Code:** <Suspense fallback={<div>Loading...</div>}>\n  <Component />\n</Suspense>\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\developer\\page.tsx\n- **Issue:** useSearchParams used without Suspense boundary\n- **Fix:** Wrap component in React.Suspense\n- **Code:** <Suspense fallback={<div>Loading...</div>}>\n  <Component />\n</Suspense>\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\products\\new\\page.tsx\n- **Issue:** useSearchParams used without Suspense boundary\n- **Fix:** Wrap component in React.Suspense\n- **Code:** <Suspense fallback={<div>Loading...</div>}>\n  <Component />\n</Suspense>\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\pujas\\new\\page.tsx\n- **Issue:** useSearchParams used without Suspense boundary\n- **Fix:** Wrap component in React.Suspense\n- **Code:** <Suspense fallback={<div>Loading...</div>}>\n  <Component />\n</Suspense>\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\security\\page.tsx\n- **Issue:** useSearchParams used without Suspense boundary\n- **Fix:** Wrap component in React.Suspense\n- **Code:** <Suspense fallback={<div>Loading...</div>}>\n  <Component />\n</Suspense>\n\n\n### 🟡 PERFORMANCE ISSUES (146)\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(auth)\\forgot-password\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(auth)\\login\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(auth)\\register\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\addresses\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\bookings\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\downloads\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\invoices\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\notifications\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\orders\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\payments\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\profile\\page.tsx\n- **Issue:** Using <img> instead of next/image\n- **Fix:** Replace with Next.js Image component for optimization\n- **Suggestion:** import Image from 'next/image';\n<Image src=\"...\" alt=\"...\" width={400} height={300} />\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\profile\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\reports\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\support\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\wishlist\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\about\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\astro\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\blog\\page.tsx\n- **Issue:** Using <img> instead of next/image\n- **Fix:** Replace with Next.js Image component for optimization\n- **Suggestion:** import Image from 'next/image';\n<Image src=\"...\" alt=\"...\" width={400} height={300} />\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\blog\\[slug]\\page.tsx\n- **Issue:** Using <img> instead of next/image\n- **Fix:** Replace with Next.js Image component for optimization\n- **Suggestion:** import Image from 'next/image';\n<Image src=\"...\" alt=\"...\" width={400} height={300} />\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\careers\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\cart\\page.tsx\n- **Issue:** Using <img> instead of next/image\n- **Fix:** Replace with Next.js Image component for optimization\n- **Suggestion:** import Image from 'next/image';\n<Image src=\"...\" alt=\"...\" width={400} height={300} />\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\cart\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\chadhawa\\page.tsx\n- **Issue:** Using <img> instead of next/image\n- **Fix:** Replace with Next.js Image component for optimization\n- **Suggestion:** import Image from 'next/image';\n<Image src=\"...\" alt=\"...\" width={400} height={300} />\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\chadhawa\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\community\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\contact\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\faq\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\gallery\\page.tsx\n- **Issue:** Using <img> instead of next/image\n- **Fix:** Replace with Next.js Image component for optimization\n- **Suggestion:** import Image from 'next/image';\n<Image src=\"...\" alt=\"...\" width={400} height={300} />\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\page.tsx\n- **Issue:** Large component (>300 lines)\n- **Fix:** Split into smaller components or use lazy loading\n- **Suggestion:** dynamic(() => import('./page.tsx'), { ssr: false })\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\products\\page.tsx\n- **Issue:** Using <img> instead of next/image\n- **Fix:** Replace with Next.js Image component for optimization\n- **Suggestion:** import Image from 'next/image';\n<Image src=\"...\" alt=\"...\" width={400} height={300} />\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\products\\[slug]\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\pujas\\page.tsx\n- **Issue:** Using <img> instead of next/image\n- **Fix:** Replace with Next.js Image component for optimization\n- **Suggestion:** import Image from 'next/image';\n<Image src=\"...\" alt=\"...\" width={400} height={300} />\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\pujas\\[slug]\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\refunds\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\shipping\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\sitemap\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\support\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\temples\\page.tsx\n- **Issue:** Using <img> instead of next/image\n- **Fix:** Replace with Next.js Image component for optimization\n- **Suggestion:** import Image from 'next/image';\n<Image src=\"...\" alt=\"...\" width={400} height={300} />\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\temples\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\tools\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\vip-pujas\\page.tsx\n- **Issue:** Using <img> instead of next/image\n- **Fix:** Replace with Next.js Image component for optimization\n- **Suggestion:** import Image from 'next/image';\n<Image src=\"...\" alt=\"...\" width={400} height={300} />\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\ai\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\analytics\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\astrology\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\backup\\page.tsx\n- **Issue:** Large component (>300 lines)\n- **Fix:** Split into smaller components or use lazy loading\n- **Suggestion:** dynamic(() => import('./page.tsx'), { ssr: false })\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\backup\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\blog\\categories\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\blog\\comments\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\blog\\new\\page.tsx\n- **Issue:** Large component (>300 lines)\n- **Fix:** Split into smaller components or use lazy loading\n- **Suggestion:** dynamic(() => import('./page.tsx'), { ssr: false })\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\blog\\new\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\blog\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\bookings\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\chadhawa\\page.tsx\n- **Issue:** Large component (>300 lines)\n- **Fix:** Split into smaller components or use lazy loading\n- **Suggestion:** dynamic(() => import('./page.tsx'), { ssr: false })\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\chadhawa\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\cms\\hero\\page.tsx\n- **Issue:** Large component (>300 lines)\n- **Fix:** Split into smaller components or use lazy loading\n- **Suggestion:** dynamic(() => import('./page.tsx'), { ssr: false })\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\cms\\hero\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\cms\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\cms\\pages\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\customers\\page.tsx\n- **Issue:** Large component (>300 lines)\n- **Fix:** Split into smaller components or use lazy loading\n- **Suggestion:** dynamic(() => import('./page.tsx'), { ssr: false })\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\customers\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\customizer\\page.tsx\n- **Issue:** Large component (>300 lines)\n- **Fix:** Split into smaller components or use lazy loading\n- **Suggestion:** dynamic(() => import('./page.tsx'), { ssr: false })\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\customizer\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\developer\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\events\\page.tsx\n- **Issue:** Large component (>300 lines)\n- **Fix:** Split into smaller components or use lazy loading\n- **Suggestion:** dynamic(() => import('./page.tsx'), { ssr: false })\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\events\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\gallery\\page.tsx\n- **Issue:** Large component (>300 lines)\n- **Fix:** Split into smaller components or use lazy loading\n- **Suggestion:** dynamic(() => import('./page.tsx'), { ssr: false })\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\gallery\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\login\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\marketing\\coupons\\page.tsx\n- **Issue:** Large component (>300 lines)\n- **Fix:** Split into smaller components or use lazy loading\n- **Suggestion:** dynamic(() => import('./page.tsx'), { ssr: false })\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\marketing\\coupons\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\marketing\\newsletter\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\marketing\\page.tsx\n- **Issue:** Large component (>300 lines)\n- **Fix:** Split into smaller components or use lazy loading\n- **Suggestion:** dynamic(() => import('./page.tsx'), { ssr: false })\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\marketing\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\media\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\notifications\\page.tsx\n- **Issue:** Large component (>300 lines)\n- **Fix:** Split into smaller components or use lazy loading\n- **Suggestion:** dynamic(() => import('./page.tsx'), { ssr: false })\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\notifications\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\orders\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\payments\\page.tsx\n- **Issue:** Large component (>300 lines)\n- **Fix:** Split into smaller components or use lazy loading\n- **Suggestion:** dynamic(() => import('./page.tsx'), { ssr: false })\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\payments\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\products\\categories\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\products\\inventory\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\products\\new\\page.tsx\n- **Issue:** Large component (>300 lines)\n- **Fix:** Split into smaller components or use lazy loading\n- **Suggestion:** dynamic(() => import('./page.tsx'), { ssr: false })\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\products\\new\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\products\\page.tsx\n- **Issue:** Large component (>300 lines)\n- **Fix:** Split into smaller components or use lazy loading\n- **Suggestion:** dynamic(() => import('./page.tsx'), { ssr: false })\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\products\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\pujas\\categories\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\pujas\\new\\page.tsx\n- **Issue:** Large component (>300 lines)\n- **Fix:** Split into smaller components or use lazy loading\n- **Suggestion:** dynamic(() => import('./page.tsx'), { ssr: false })\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\pujas\\new\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\pujas\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\pujas\\slots\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\reports\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\security\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\seo\\page.tsx\n- **Issue:** Large component (>300 lines)\n- **Fix:** Split into smaller components or use lazy loading\n- **Suggestion:** dynamic(() => import('./page.tsx'), { ssr: false })\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\seo\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\settings\\page.tsx\n- **Issue:** Large component (>300 lines)\n- **Fix:** Split into smaller components or use lazy loading\n- **Suggestion:** dynamic(() => import('./page.tsx'), { ssr: false })\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\settings\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\social\\page.tsx\n- **Issue:** Large component (>300 lines)\n- **Fix:** Split into smaller components or use lazy loading\n- **Suggestion:** dynamic(() => import('./page.tsx'), { ssr: false })\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\social\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\storage\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\support\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\temples\\new\\page.tsx\n- **Issue:** Large component (>300 lines)\n- **Fix:** Split into smaller components or use lazy loading\n- **Suggestion:** dynamic(() => import('./page.tsx'), { ssr: false })\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\temples\\new\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\temples\\page.tsx\n- **Issue:** Large component (>300 lines)\n- **Fix:** Split into smaller components or use lazy loading\n- **Suggestion:** dynamic(() => import('./page.tsx'), { ssr: false })\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\temples\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\testimonials\\page.tsx\n- **Issue:** Large component (>300 lines)\n- **Fix:** Split into smaller components or use lazy loading\n- **Suggestion:** dynamic(() => import('./page.tsx'), { ssr: false })\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\testimonials\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\tools\\page.tsx\n- **Issue:** Large component (>300 lines)\n- **Fix:** Split into smaller components or use lazy loading\n- **Suggestion:** dynamic(() => import('./page.tsx'), { ssr: false })\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\tools\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\users\\activity\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\users\\admins\\page.tsx\n- **Issue:** Large component (>300 lines)\n- **Fix:** Split into smaller components or use lazy loading\n- **Suggestion:** dynamic(() => import('./page.tsx'), { ssr: false })\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\users\\admins\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\users\\page.tsx\n- **Issue:** Large component (>300 lines)\n- **Fix:** Split into smaller components or use lazy loading\n- **Suggestion:** dynamic(() => import('./page.tsx'), { ssr: false })\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\users\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\users\\permissions\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\users\\roles\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\astrology\\astrologers\\route.ts\n- **Issue:** Prisma query fetching all fields\n- **Fix:** Use select: {} to fetch only needed fields\n- **Suggestion:** select: { id: true, name: true, price: true }\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\blog\\categories\\route.ts\n- **Issue:** Prisma query fetching all fields\n- **Fix:** Use select: {} to fetch only needed fields\n- **Suggestion:** select: { id: true, name: true, price: true }\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\chadhawa\\route.ts\n- **Issue:** Prisma query fetching all fields\n- **Fix:** Use select: {} to fetch only needed fields\n- **Suggestion:** select: { id: true, name: true, price: true }\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\coupons\\route.ts\n- **Issue:** Prisma query fetching all fields\n- **Fix:** Use select: {} to fetch only needed fields\n- **Suggestion:** select: { id: true, name: true, price: true }\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\gallery\\route.ts\n- **Issue:** Prisma query fetching all fields\n- **Fix:** Use select: {} to fetch only needed fields\n- **Suggestion:** select: { id: true, name: true, price: true }\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\hero\\route.ts\n- **Issue:** Prisma query fetching all fields\n- **Fix:** Use select: {} to fetch only needed fields\n- **Suggestion:** select: { id: true, name: true, price: true }\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\marketing\\newsletter\\send\\route.ts\n- **Issue:** Prisma query fetching all fields\n- **Fix:** Use select: {} to fetch only needed fields\n- **Suggestion:** select: { id: true, name: true, price: true }\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\marketing\\route.ts\n- **Issue:** Prisma query fetching all fields\n- **Fix:** Use select: {} to fetch only needed fields\n- **Suggestion:** select: { id: true, name: true, price: true }\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\media\\route.ts\n- **Issue:** Prisma query fetching all fields\n- **Fix:** Use select: {} to fetch only needed fields\n- **Suggestion:** select: { id: true, name: true, price: true }\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\payments\\route.ts\n- **Issue:** Prisma query fetching all fields\n- **Fix:** Use select: {} to fetch only needed fields\n- **Suggestion:** select: { id: true, name: true, price: true }\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\product-categories\\route.ts\n- **Issue:** Prisma query fetching all fields\n- **Fix:** Use select: {} to fetch only needed fields\n- **Suggestion:** select: { id: true, name: true, price: true }\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\puja-categories\\route.ts\n- **Issue:** Prisma query fetching all fields\n- **Fix:** Use select: {} to fetch only needed fields\n- **Suggestion:** select: { id: true, name: true, price: true }\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\settings\\route.ts\n- **Issue:** Prisma query fetching all fields\n- **Fix:** Use select: {} to fetch only needed fields\n- **Suggestion:** select: { id: true, name: true, price: true }\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\temples\\route.ts\n- **Issue:** Prisma query fetching all fields\n- **Fix:** Use select: {} to fetch only needed fields\n- **Suggestion:** select: { id: true, name: true, price: true }\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\tools\\route.ts\n- **Issue:** Prisma query fetching all fields\n- **Fix:** Use select: {} to fetch only needed fields\n- **Suggestion:** select: { id: true, name: true, price: true }\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\users\\roles\\route.ts\n- **Issue:** Prisma query fetching all fields\n- **Fix:** Use select: {} to fetch only needed fields\n- **Suggestion:** select: { id: true, name: true, price: true }\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\customizer\\route.ts\n- **Issue:** Prisma query fetching all fields\n- **Fix:** Use select: {} to fetch only needed fields\n- **Suggestion:** select: { id: true, name: true, price: true }\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\newsletter\\route.ts\n- **Issue:** Prisma query fetching all fields\n- **Fix:** Use select: {} to fetch only needed fields\n- **Suggestion:** select: { id: true, name: true, price: true }\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\orders\\route.ts\n- **Issue:** Prisma query fetching all fields\n- **Fix:** Use select: {} to fetch only needed fields\n- **Suggestion:** select: { id: true, name: true, price: true }\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\payments\\create-order\\route.ts\n- **Issue:** Missing Cache-Control headers in API\n- **Fix:** Add caching headers for faster responses\n- **Suggestion:** response.headers.set('Cache-Control', 's-maxage=60, stale-while-revalidate=120');\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\payments\\verify\\route.ts\n- **Issue:** Missing Cache-Control headers in API\n- **Fix:** Add caching headers for faster responses\n- **Suggestion:** response.headers.set('Cache-Control', 's-maxage=60, stale-while-revalidate=120');\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\settings\\route.ts\n- **Issue:** Prisma query fetching all fields\n- **Fix:** Use select: {} to fetch only needed fields\n- **Suggestion:** select: { id: true, name: true, price: true }\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\[[...path]]\\route.ts\n- **Issue:** Missing Cache-Control headers in API\n- **Fix:** Add caching headers for faster responses\n- **Suggestion:** response.headers.set('Cache-Control', 's-maxage=60, stale-while-revalidate=120');\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\[[...path]]\\route.ts\n- **Issue:** Prisma query fetching all fields\n- **Fix:** Use select: {} to fetch only needed fields\n- **Suggestion:** select: { id: true, name: true, price: true }\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\ask-a-pandit\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\bookings\\new\\page.tsx\n- **Issue:** Large component (>300 lines)\n- **Fix:** Split into smaller components or use lazy loading\n- **Suggestion:** dynamic(() => import('./page.tsx'), { ssr: false })\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\bookings\\new\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\checkout\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\test-payment\\page.tsx\n- **Issue:** Page without revalidation (static/ISR)\n- **Fix:** Add revalidate for ISR\n- **Suggestion:** export const revalidate = 3600; // Revalidate every hour\n\n\n### 🟢 OTHER ISSUES (7)\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(marketing)\\temples\\[slug]\\page.tsx\n- **Issue:** Fixed widths without mobile fallback\n- **Fix:** Add responsive classes: sm:, md:, lg:\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\admin\\login\\page.tsx\n- **Issue:** Potential secret (PASSWORD) exposed in code\n- **Fix:** Move to .env file and use process.env\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\admin\\login\\route.ts\n- **Issue:** Potential secret (PASSWORD) exposed in code\n- **Fix:** Move to .env file and use process.env\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\cron\\backup\\route.ts\n- **Issue:** Potential secret (SECRET) exposed in code\n- **Fix:** Move to .env file and use process.env\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\payments\\verify\\route.ts\n- **Issue:** Potential secret (SECRET) exposed in code\n- **Fix:** Move to .env file and use process.env\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\razorpay\\webhook\\route.ts\n- **Issue:** Potential secret (SECRET) exposed in code\n- **Fix:** Move to .env file and use process.env\n\n\n- **File:** C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\api\\settings\\route.ts\n- **Issue:** Potential secret (API_KEY) exposed in code\n- **Fix:** Move to .env file and use process.env\n\n\n## 🎯 PRIORITY FIXES (Top 5)\n\n1. **PERFORMANCE** - C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(auth)\\forgot-password\\page.tsx\n   - Page without revalidation (static/ISR)\n   - Add revalidate for ISR\n\n\n2. **PERFORMANCE** - C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(auth)\\login\\page.tsx\n   - Page without revalidation (static/ISR)\n   - Add revalidate for ISR\n\n\n3. **PERFORMANCE** - C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(auth)\\register\\page.tsx\n   - Page without revalidation (static/ISR)\n   - Add revalidate for ISR\n\n\n4. **PERFORMANCE** - C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\addresses\\page.tsx\n   - Page without revalidation (static/ISR)\n   - Add revalidate for ISR\n\n\n5. **PERFORMANCE** - C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\bookings\\page.tsx\n   - Page without revalidation (static/ISR)\n   - Add revalidate for ISR\n\n\nPlease provide specific code fixes for each issue. Include:\n1. Exact file path\n2. Before/After code\n3. Explanation of the fix\n",
+  "fixCommands": [
+    "npm run build",
+    "npm run dev",
+    "node auto-robot.js"
+  ],
+  "priorityFixes": [
+    {
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(auth)\\forgot-password\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR"
+    },
+    {
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(auth)\\login\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR"
+    },
+    {
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(auth)\\register\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR"
+    },
+    {
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\addresses\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR"
+    },
+    {
+      "file": "C:\\Users\\Jai Shree Krishna\\Desktop\\55\\801-main\\app\\(dashboard)\\dashboard\\bookings\\page.tsx",
+      "issue": "Page without revalidation (static/ISR)",
+      "fix": "Add revalidate for ISR"
+    }
+  ]
+}

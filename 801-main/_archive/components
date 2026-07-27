@@ -1,0 +1,227 @@
+'use client'
+
+import { useState, useEffect, useRef } from 'react'
+import { Button } from '@/components/ui/button'
+import { MessageCircle, X, Send } from 'lucide-react'
+import { cn } from '@/lib/utils'
+import Link from 'next/link'
+
+type QNA = {
+  q: string
+  a: string | React.ReactNode
+  keywords?: string[]
+}
+
+const FAQ_POOL: QNA[] = [
+  {
+    q: '🌸 पूजा कैसे बुक करें?',
+    a: (
+      <>
+        पूजा बुक करने के लिए हमारे <Link href="/pujas" className="text-primary underline font-bold">Pujas Section</Link> में जाएँ। अपनी मनपसंद पूजा चुनें, तिथि और समय सेलेक्ट करें और 'Book Now' पर क्लिक करें।
+      </>
+    ),
+    keywords: ['puja', 'book', 'पूजा', 'बुक', 'pujas', 'booking']
+  },
+  {
+    q: '📦 मेरे ऑर्डर/बुकिंग का स्टेटस क्या है?',
+    a: (
+      <>
+        अपने ऑर्डर्स और बुकिंग्स देखने के लिए कृपया <Link href="/dashboard" className="text-primary underline font-bold">My Account (डैशबोर्ड)</Link> में लॉगिन करें।
+      </>
+    ),
+    keywords: ['order', 'status', 'booking', 'ऑर्डर', 'स्टेटस', 'बुकिंग', 'track']
+  },
+  {
+    q: '🙏 मुझे सपोर्ट या कंप्लेंट करनी है',
+    a: (
+      <>
+        सहायता के लिए आप सीधे <Link href="/dashboard/support" className="text-primary underline font-bold">यहाँ क्लिक करके सपोर्ट टिकट</Link> बना सकते हैं, हमारी टीम 24 घंटे में आपसे संपर्क करेगी।
+      </>
+    ),
+    keywords: ['support', 'complaint', 'सपोर्ट', 'कंप्लेंट', 'help', 'मदद', 'शिकायत', 'problem']
+  },
+  {
+    q: '🕉️ दिव्ययज्ञम् के बारे में',
+    a: 'दिव्ययज्ञम् एक ऑनलाइन सनातन सेवा मंच है, जहाँ आप काशी, उज्जैन और अन्य पवित्र तीर्थों के विद्वान पंडितों द्वारा ऑनलाइन पूजा, अनुष्ठान और प्रसाद सेवा प्राप्त कर सकते हैं।',
+    keywords: ['about', 'दिव्ययज्ञम्', 'divyayagyam', 'kya hai']
+  },
+  {
+    q: '💳 पेमेंट के कौनसे तरीके हैं?',
+    a: 'हम UPI (Google Pay, PhonePe, Paytm), Credit/Debit Cards, और Net Banking स्वीकार करते हैं। सभी पेमेंट्स 100% सुरक्षित (SSL encrypted) हैं।',
+    keywords: ['payment', 'pay', 'पेमेंट', 'upi', 'card', 'पैसे', 'rupee']
+  },
+  {
+    q: '🚚 प्रसाद डिलीवरी में कितना समय लगता है?',
+    a: 'पूजा संपन्न होने के बाद, आपका प्रसाद 5-7 कार्य दिवसों (Working Days) के भीतर आपके पते पर डिलीवर कर दिया जाता है।',
+    keywords: ['delivery', 'prasad', 'डिलीवरी', 'प्रसाद', 'time', 'समय', 'kab milega']
+  },
+  {
+    q: '💸 क्या मुझे रिफंड मिल सकता है?',
+    a: 'पूजा होने से 24 घंटे पहले कैंसिल करने पर आपको फुल रिफंड मिल जाएगा। अधिक जानकारी के लिए हमारी रिफंड पॉलिसी पढ़ें या सपोर्ट से संपर्क करें।',
+    keywords: ['refund', 'cancel', 'रिफंड', 'कैंसिल', 'वापस', 'paisa']
+  }
+]
+
+export function StaticSupportBot() {
+  const [isOpen, setIsOpen] = useState(false)
+  const [chatHistory, setChatHistory] = useState<{role: 'user'|'bot', content: React.ReactNode}[]>([])
+  const [inputText, setInputText] = useState('')
+  const [randomFaqs, setRandomFaqs] = useState<QNA[]>([])
+  const chatEndRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    // Pick 4 random FAQs on mount
+    const shuffled = [...FAQ_POOL].sort(() => 0.5 - Math.random())
+    setRandomFaqs(shuffled.slice(0, 4))
+  }, [isOpen])
+
+  useEffect(() => {
+    if (chatEndRef.current) {
+      chatEndRef.current.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [chatHistory])
+
+  const handleQuestionClick = (qna: QNA) => {
+    setChatHistory(prev => [
+      ...prev,
+      { role: 'user', content: qna.q },
+      { role: 'bot', content: qna.a }
+    ])
+  }
+
+  const handleSendCustomMessage = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!inputText.trim()) return
+
+    const userText = inputText.trim()
+    setInputText('')
+
+    setChatHistory(prev => [...prev, { role: 'user', content: userText }])
+
+    // Find best match
+    const lowerText = userText.toLowerCase()
+    let matchedFaq = FAQ_POOL.find(f => 
+      f.keywords?.some(kw => lowerText.includes(kw))
+    )
+
+    setTimeout(() => {
+      if (matchedFaq) {
+        setChatHistory(prev => [...prev, { role: 'bot', content: matchedFaq!.a }])
+      } else {
+        const fallbackMsg = (
+          <div className="space-y-2">
+            <p>क्षमा करें, मैं आपका प्रश्न समझ नहीं पाया। कृपया अधिक जानकारी के लिए <Link href="/dashboard/support" className="text-primary underline font-bold">सपोर्ट टिकट</Link> बनाएं।</p>
+            <div className="text-xs bg-black/5 p-2 rounded border border-black/10">
+              <p>📧 Email: <strong>support@divyayagyam.com</strong></p>
+              <p>💬 WhatsApp: <strong>+91-9999999999</strong></p>
+            </div>
+          </div>
+        )
+        setChatHistory(prev => [...prev, { role: 'bot', content: fallbackMsg }])
+      }
+    }, 400) // slight delay to feel natural
+  }
+
+  const resetChat = () => setChatHistory([])
+
+  return (
+    <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end pointer-events-none">
+      {/* CHAT WINDOW */}
+      <div 
+        className={cn(
+          "mb-4 transition-all duration-300 origin-bottom-right pointer-events-auto",
+          isOpen ? "scale-100 opacity-100" : "scale-0 opacity-0 pointer-events-none"
+        )}
+      >
+        <div className="w-[calc(100vw-2rem)] max-w-[360px] h-[60vh] max-h-[520px] max-w-[calc(100vw-2rem)] bg-background border shadow-2xl rounded-2xl overflow-hidden flex flex-col w-full sm:[calc(100vw-2rem)] max-w-[360px] h-[60vh] max-h-[520px] max-w-[calc(100vw-2rem)] bg-background border shadow-2xl rounded-2xl overflow-hidden flex flex-col">
+          <div className="bg-gradient-to-r from-orange-500 to-red-600 text-white p-4 flex items-center justify-between shrink-0 shadow-sm z-10">
+            <div>
+              <h3 className="font-bold text-sm">पंडित दिव्ययज्ञम् जी 🌺</h3>
+              <p className="text-[10px] opacity-90">Customer Support Bot</p>
+            </div>
+            <div className="flex items-center gap-1">
+              {chatHistory.length > 0 && (
+                <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/20 rounded-full" onClick={resetChat} title="Reset">
+                   <span className="text-xs">↺</span>
+                </Button>
+              )}
+              <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/20 rounded-full" onClick={() => setIsOpen(false)}>
+                <X className="h-4 w-4" />
+              </Button>
+            </div>
+          </div>
+          
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-orange-50/30" style={{ overscrollBehavior: "contain" }}>
+            <div className="flex gap-2 justify-start">
+              <div className="h-8 w-8 rounded-full om-gradient flex items-center justify-center text-white text-sm shrink-0 shadow-sm border border-orange-200">ॐ</div>
+              <div className="rounded-2xl rounded-tl-sm px-4 py-2.5 max-w-[85%] bg-white border border-slate-100 shadow-sm text-sm text-slate-800 w-full sm:rounded-2xl rounded-tl-sm px-4 py-2.5 max-[85%] bg-white border border-slate-100 shadow-sm text-sm text-slate-800">
+                हरि ओम्! 🙏 मैं आपका सहायक हूँ। नीचे दिए गए विकल्पों में से अपना प्रश्न चुनें, या अपना प्रश्न टाइप करें:
+              </div>
+            </div>
+
+            {chatHistory.map((msg, i) => (
+              <div key={i} className={cn('flex gap-2', msg.role === 'user' ? 'justify-end' : 'justify-start')}>
+                {msg.role === 'bot' && (
+                  <div className="h-8 w-8 rounded-full om-gradient flex items-center justify-center text-white text-sm shrink-0 shadow-sm border border-orange-200">ॐ</div>
+                )}
+                <div className={cn('rounded-2xl px-4 py-2.5 max-w-[85%] text-sm shadow-sm',
+                  msg.role === 'user' ? 'bg-orange-600 text-white rounded-tr-sm' : 'bg-white border border-slate-100 text-slate-800 rounded-tl-sm'
+                )}>
+                  {msg.content}
+                </div>
+              </div>
+            ))}
+            <div ref={chatEndRef} />
+          </div>
+
+          <div className="p-3 bg-white border-t shrink-0 flex flex-col gap-3">
+            {chatHistory.length < 4 && (
+              <div className="flex flex-wrap gap-1.5">
+                {randomFaqs.map((qna, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => handleQuestionClick(qna)}
+                    className="text-left text-[11px] px-2.5 py-1.5 border border-orange-200 bg-orange-50/50 rounded-full hover:bg-orange-100 hover:border-orange-300 transition-colors text-orange-900 font-medium"
+                  >
+                    {qna.q}
+                  </button>
+                ))}
+              </div>
+            )}
+            <form onSubmit={handleSendCustomMessage} className="flex gap-2 items-center">
+              <input 
+                type="text"
+                id="support-bot-input"
+                name="support-bot-input"
+                placeholder="अपना प्रश्न यहाँ लिखें..." 
+                value={inputText}
+                onChange={e => setInputText(e.target.value)}
+                aria-label="Input field"
+                className="flex-1 text-sm h-10 px-3 bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-orange-500 rounded-xl"
+              />
+              <Button type="submit" disabled={!inputText.trim()} size="icon" className="h-10 w-10 shrink-0 bg-orange-600 hover:bg-orange-700 rounded-xl text-white">
+                <Send className="h-4 w-4" />
+              </Button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      {/* TOGGLE BUTTON */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="h-16 w-16 rounded-full bg-gradient-to-br from-orange-500 via-orange-600 to-amber-500 text-white shadow-golden-glow border-2 border-amber-200/50 flex flex-col items-center justify-center hover:scale-105 transition-transform active:scale-95 pointer-events-auto"
+      >
+        {isOpen ? (
+          <X className="h-7 w-7" />
+        ) : (
+          <>
+            <span className="text-2xl leading-none -mt-1">🙏</span>
+            <span className="text-[9px] font-black tracking-wider uppercase mt-1">Chat</span>
+          </>
+        )}
+      </button>
+    </div>
+  )
+}
+
