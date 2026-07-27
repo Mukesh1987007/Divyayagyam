@@ -4,7 +4,14 @@ import { PrismaClient } from '@prisma/client'
 // This prevents "too many connections" in both dev AND production (serverless)
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient | undefined }
 
+const dbUrl = process.env.DATABASE_URL || 'postgresql://postgres:postgres@localhost:5432/postgres'
+
 const basePrisma = new PrismaClient({
+  datasources: {
+    db: {
+      url: dbUrl,
+    },
+  },
   log: process.env.NODE_ENV === 'development' ? ['warn', 'error'] : ['error'],
 })
 

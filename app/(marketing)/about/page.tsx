@@ -8,7 +8,7 @@ export const revalidate = 3600; // ISR: Revalidate every 3600s
 export default async function AboutPage() {
   const setting = await prisma.websiteSetting.findUnique({
     where: { key: 'cms.about' }
-  })
+  }).catch(() => null)
   const customContent = setting?.value || ''
 
   return (
