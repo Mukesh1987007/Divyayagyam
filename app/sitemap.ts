@@ -1,12 +1,20 @@
 import { MetadataRoute } from 'next'
-
-export const dynamic = 'force-dynamic'
 import { prisma } from '@/lib/prisma'
 import { getDynamicSiteConfig } from '@/lib/settings'
 
+export const dynamic = 'force-dynamic'
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const config = await getDynamicSiteConfig()
-  const baseUrl = config.url || 'https://divyayagyam.com'
+  let baseUrl = 'https://divyayagyam.com'
+
+  try {
+    const config = await getDynamicSiteConfig()
+    if (config?.url) {
+      baseUrl = config.url
+    }
+  } catch (e) {
+    // Fallback to default domain on DB error
+  }
 
   const sitemapEntries: MetadataRoute.Sitemap = [
     { url: `${baseUrl}`, lastModified: new Date(), changeFrequency: 'daily', priority: 1.0 },
@@ -22,7 +30,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const pujas = await prisma.puja.findMany({
       where: { status: 'PUBLISHED' },
       select: { slug: true, updatedAt: true }
-    })
+    }).catch(() => [])
+
     pujas.forEach(p => {
       sitemapEntries.push({
         url: `${baseUrl}/pujas/${p.slug}`,
@@ -36,7 +45,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const products = await prisma.product.findMany({
       where: { status: 'ACTIVE' },
       select: { slug: true, updatedAt: true }
-    })
+    }).catch(() => [])
+
     products.forEach(p => {
       sitemapEntries.push({
         url: `${baseUrl}/products/${p.slug}`,
@@ -50,7 +60,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const posts = await prisma.blog.findMany({
       where: { status: 'PUBLISHED' },
       select: { slug: true, updatedAt: true }
-    })
+    }).catch(() => [])
+
     posts.forEach(p => {
       sitemapEntries.push({
         url: `${baseUrl}/blog/${p.slug}`,
@@ -64,7 +75,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const tools = await prisma.spiritualTool.findMany({
       where: { isActive: true },
       select: { slug: true, createdAt: true }
-    })
+    }).catch(() => [])
+
     tools.forEach(t => {
       sitemapEntries.push({
         url: `${baseUrl}/tools/${t.slug}`,
