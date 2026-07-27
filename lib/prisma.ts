@@ -1,27 +1,55 @@
 import { PrismaClient } from '@prisma/client'
+import fs from 'fs'
+import path from 'path'
 
-// Singleton pattern — always cache in globalThis
-// This prevents "too many connections" in both dev AND production (serverless)
+// Helper function to resolve DATABASE_URL from process.env or direct disk read
+function getDatabaseUrl(): string | undefined {
+  if (process.env.DATABASE_URL?.trim()) {
+    return process.env.DATABASE_URL.trim()
+  }
+
+  // Fallback: Try reading directly from .env.local or .env on disk if process.env was not loaded by dev server
+  try {
+    const cwd = process.cwd()
+    const envPaths = [path.join(cwd, '.env.local'), path.join(cwd, '.env')]
+    for (const envPath of envPaths) {
+      if (fs.existsSync(envPath)) {
+        const content = fs.readFileSync(envPath, 'utf-8')
+        const match = content.match(/^DATABASE_URL=["']?([^"'\r\n]+)["']?/m)
+        if (match && match[1]) {
+          const url = match[1].trim()
+          process.env.DATABASE_URL = url
+          return url
+        }
+      }
+    }
+  } catch (e) {
+    // Ignore file system errors
+  }
+
+  return undefined
+}
+
+// Singleton pattern — always cache in globalThis to prevent connection pool exhaustion
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient | undefined }
 
-const dbUrl = process.env.DATABASE_URL?.trim()
+const resolvedDbUrl = getDatabaseUrl()
 
-const basePrisma = new PrismaClient(
-  dbUrl
-    ? {
-        datasources: {
-          db: { url: dbUrl },
-        },
-        log: process.env.NODE_ENV === 'development' ? ['warn', 'error'] : ['error'],
-      }
-    : {
-        log: process.env.NODE_ENV === 'development' ? ['warn', 'error'] : ['error'],
-      }
-)
+if (!resolvedDbUrl) {
+  console.warn('⚠️ [Prisma Warning]: DATABASE_URL is missing in environment variables.')
+}
+
+const basePrisma = new PrismaClient({
+  datasources: {
+    db: {
+      url: resolvedDbUrl || 'postgresql://invalid_url_please_set_DATABASE_URL@localhost:6543/postgres',
+    },
+  },
+  log: process.env.NODE_ENV === 'development' ? ['warn', 'error'] : ['error'],
+})
 
 export const prisma = globalForPrisma.prisma ?? basePrisma
 
-// Always cache — critical for serverless to avoid connection pool exhaustion
 if (!globalForPrisma.prisma) {
   globalForPrisma.prisma = prisma as any
 }
