@@ -1,0 +1,21 @@
+{
+  "name": "Divyayagyam - Online Puja & Sanatan Seva",
+  "short_name": "Divyayagyam",
+  "description": "Book online pujas, chadhawa, and astrology consultations from top temples in India.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#FF8C21",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

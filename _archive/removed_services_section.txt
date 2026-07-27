@@ -1,0 +1,45 @@
+// Removed on 2026-07-23
+// Previously in app/(marketing)/page.tsx
+
+const services = [
+  { icon: Flame, title: 'ऑनलाइन पूजा (Online Pujas)', desc: 'प्रमाणित पंडितों द्वारा आपके नाम व गोत्र से अभिमंत्रित लाइव पूजा संकल्प।', href: '/pujas', color: 'from-orange-500/20 to-orange-500/5' },
+  { icon: Sparkles, title: 'चढ़ावा सेवा (BhaktiSeva Seva)', desc: 'पवित्र धामों में फूल अर्पण, भोग, दीप दान और गौ-सेवा सीधे ऑनलाइन कराएं।', href: '/bhaktiseva', color: 'from-yellow-500/20 to-yellow-500/5' },
+  { icon: ShoppingBag, title: 'अभिमंतृत सामग्री (Divine Store)', desc: 'गंगाजल, सिद्ध रुद्राक्ष, पारद शिवलिंग एवं प्रमाणित रत्न घर मंगाएं।', href: '/products', color: 'from-pink-500/20 to-pink-500/5' },
+]
+
+      {/* THREE SERVICES CARDS */}
+      <section className="container py-10 md:py-14">
+        <FadeIn className="text-center max-w-2xl mx-auto space-y-3 mb-10" direction="up">
+          <Badge className="bg-[var(--secondary-color)]/10 text-[var(--text-dark)] hover:bg-[var(--secondary-color)]/20 border-none font-bold px-3 py-1 mb-1 shadow-none">
+            Our Offerings
+          </Badge>
+          <h2 className="text-2xl md:text-3xl font-black text-[var(--text-dark)]">Explore Our Services</h2>
+          <p className="text-sm md:text-base text-gray-500 font-medium">Book your puja and chadhava directly from your home, performed by verified pandits.</p>
+        </FadeIn>
+        <div className="grid gap-5 md:gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((s) => {
+            const Icon = s.icon
+            return (
+              <Link key={s.href} href={s.href} className="group">
+                <Card className="relative overflow-hidden h-full border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-500 rounded-2xl bg-[var(--card-bg)] hover:-translate-y-1">
+                  {/* Interactive gradient background on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary-color)] to-[#C1121F] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <CardContent className="relative z-10 p-6 flex flex-col h-full">
+                    <div className="flex-1">
+                      <div className="h-12 w-12 rounded-xl bg-[var(--bg-light)] group-hover:bg-white/20 flex items-center justify-center transition-all duration-500 shadow-sm group-hover:scale-110">
+                        <Icon className="h-5 w-5 text-[var(--primary-color)] group-hover:text-white transition-colors duration-500" />
+                      </div>
+                      <h3 className="font-bold text-lg mt-5 text-[var(--text-dark)] group-hover:text-white transition-colors duration-500">{s.title}</h3>
+                      <p className="text-sm text-gray-500 group-hover:text-white/90 leading-relaxed mt-2.5 transition-colors duration-500 font-medium">{s.desc}</p>
+                    </div>
+                    <div className="inline-flex items-center gap-1.5 text-[13px] font-bold text-[var(--primary-color)] group-hover:text-white mt-6 transition-colors duration-500 uppercase tracking-wide">
+                      Explore <ArrowRight className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-x-1.5" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            )
+          })}
+        </div>
+      </section>
