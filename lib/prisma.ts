@@ -38,7 +38,7 @@ const resolvedDbUrl = process.env.DATABASE_URL?.trim()
 const basePrisma = new PrismaClient({
   datasources: {
     db: {
-      url: resolvedDbUrl || 'postgresql://postgres:Prakashanandji.24@db.ctbhiqkgzgmjicvcgsxa.supabase.co:5432/postgres',
+      url: resolvedDbUrl || 'postgresql://postgres.ctbhiqkgzgmjicvcgsxa:Prakashanandji.24@aws-0-ap-southeast-1.pooler.supabase.com:6543/postgres?pgbouncer=true&sslmode=require',
     },
   },
   log: process.env.NODE_ENV === 'development' ? ['warn', 'error'] : ['error'],
