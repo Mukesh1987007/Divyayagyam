@@ -14,12 +14,25 @@ const quickActions = [
   { label: 'Send Notification', href: '/admin/notifications', icon: Zap },
 ]
 
+export const dynamic = 'force-dynamic'
+
 export default async function AdminDashboardPage() {
-  const [devoteesCount, bookingsCount, ordersCount] = await Promise.all([
-    prisma.user.count({ where: { role: { name: 'USER' } } }),
-    prisma.booking.count(),
-    prisma.order.count(),
-  ])
+  let devoteesCount = 0
+  let bookingsCount = 0
+  let ordersCount = 0
+
+  try {
+    const counts = await Promise.all([
+      prisma.user.count({ where: { role: { name: 'USER' } } }),
+      prisma.booking.count(),
+      prisma.order.count(),
+    ])
+    devoteesCount = counts[0]
+    bookingsCount = counts[1]
+    ordersCount = counts[2]
+  } catch (err) {
+    console.error('Error fetching admin stats:', err)
+  }
 
   const totalRev = 0
   const totalTax = 0

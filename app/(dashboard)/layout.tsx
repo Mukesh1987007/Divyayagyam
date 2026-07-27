@@ -1,4 +1,6 @@
 import { Navbar } from '@/components/layouts/navbar'
+
+export const dynamic = 'force-dynamic'
 import { DashboardSidebar } from '@/components/layouts/dashboard-sidebar'
 import { getCurrentUser } from '@/lib/auth'
 import { redirect } from 'next/navigation'

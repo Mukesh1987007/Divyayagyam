@@ -1,4 +1,6 @@
 import { AdminSidebar } from '@/components/layouts/admin-sidebar'
+
+export const dynamic = 'force-dynamic'
 import { getAdminUser } from '@/lib/admin-session'
 import { redirect } from 'next/navigation'
 import { headers } from 'next/headers'
