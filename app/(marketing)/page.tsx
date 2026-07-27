@@ -53,11 +53,11 @@ export default async function HomePage() {
       where: { isActive: true },
       orderBy: { createdAt: 'desc' },
       take: 6
-    }),
+    }).catch(() => []),
     prisma.heroSlider.findMany({
       where: { isActive: true },
       orderBy: { order: 'asc' }
-    }),
+    }).catch(() => []),
     prisma.mediaLibrary.findMany({ where: { folder: 'Past Puja' }, orderBy: { createdAt: 'desc' }, take: 10 }).catch(() => []),
     prisma.mediaLibrary.findMany({ where: { folder: 'Customer Review' }, orderBy: { createdAt: 'desc' }, take: 12 }).catch(() => []),
     prisma.mediaLibrary.findMany({ where: { folder: 'Festival Event' }, orderBy: { createdAt: 'desc' }, take: 5 }).catch(() => []),
