@@ -16,7 +16,7 @@ import { Suspense } from 'react'
 function AdminLoginContent() {
   const router = useRouter()
   const params = useSearchParams()
-  const [email, setEmail] = useState('Diksha@gmail.com')
+  const [email, setEmail] = useState('admin@divyayagyam.com')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
 
@@ -70,30 +70,7 @@ function AdminLoginContent() {
               />
             </div>
             <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <Label htmlFor="password">Password</Label>
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <button type="button" className="text-xs font-semibold text-primary hover:underline" aria-label="Button">Forgot?</button>
-                  </DialogTrigger>
-                  <DialogContent className="sm:max-w-md">
-                    <DialogHeader>
-                      <DialogTitle className="flex items-center gap-2"><KeyRound className="h-5 w-5 text-orange-500" /> Admin Password Reset</DialogTitle>
-                      <DialogDescription>
-                        For extreme security reasons, the Super Admin password cannot be reset via email.
-                      </DialogDescription>
-                    </DialogHeader>
-                    <div className="space-y-4 py-4 text-sm">
-                      <p>To reset your Admin Password, you must update the server configuration directly.</p>
-                      <div className="bg-muted p-4 rounded-lg font-mono text-xs border">
-                        <p className="text-muted-foreground mb-2">Update this variable in your <span className="font-bold text-foreground">.env</span> file:</p>
-                        <p>ADMIN_PASSWORD = process.env.NEXT_PUBLIC_PASSWORD_0423 || ''</p>
-                      </div>
-                      <p>After updating the <code>.env</code> file, Vercel will automatically redeploy with your new password!</p>
-                    </div>
-                  </DialogContent>
-                </Dialog>
-              </div>
+              <Label htmlFor="password">Password</Label>
               <Input
                 id="password"
                 type="password"
