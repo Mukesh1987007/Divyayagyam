@@ -91,7 +91,10 @@ export const getAdminUser = cache(async () => {
     })
 
     if (user) {
-      const permissions = user.role?.permissions.map(p => p.permission.slug) || []
+      let permissions = user.role?.permissions.map(p => p.permission.slug) || []
+      if (user.role?.slug === 'super_admin' && !permissions.includes('*')) {
+        permissions = ['*']
+      }
       return { ...user, permissions }
     }
 
@@ -104,7 +107,7 @@ export const getAdminUser = cache(async () => {
         email: sessionEmail,
         fullName: 'Super Admin',
         name: 'Super Admin',
-        role: { name: 'Super Admin', slug: 'admin', isSystem: true, permissions: [] },
+        role: { name: 'Super Admin', slug: 'super_admin', isSystem: true, permissions: [] },
         permissions: ['*'], // all permissions
         status: 'ACTIVE',
         passwordHash: null,
