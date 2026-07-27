@@ -90,7 +90,8 @@ function SidebarSection({ section, pathname, permissions }: { section: (typeof A
       {open && (
         <div className="mt-0.5 mb-1 ml-4 pl-3 border-l border-sidebar-border space-y-0.5">
           {section.items!.map((item) => {
-            const active = pathname + (typeof window !== 'undefined' ? window.location.search : '') === item.href
+            const itemPath = item.href.split('?')[0]
+            const active = pathname === itemPath
             return (
               <Link
                 key={item.href}

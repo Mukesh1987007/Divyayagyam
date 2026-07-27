@@ -27,7 +27,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   }
 
   return (
-    <div translate="no" suppressHydrationWarning className="min-h-screen flex bg-muted/20">
+    <div translate="no" suppressHydrationWarning className="min-h-screen flex bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
       <AdminSidebar permissions={user.permissions} />
       <div className="flex-1 flex flex-col min-w-0">
         <header className="h-16 border-b border-border/60 bg-background flex items-center justify-between px-4 lg:px-6 sticky top-0 z-10 gap-4">
